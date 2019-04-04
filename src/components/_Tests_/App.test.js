@@ -4,8 +4,11 @@ import App from '../App'
 
 
 it('shows comment box', () => {
-  const div = document.create("div")
-
+  const div = document.createElement("div")
   ReactDOM.render(<App />, div )
+
+
+  console.log(div.innerHTML)
+
   ReactDOM.unmountComponentAtNode(div)
 })
