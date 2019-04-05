@@ -4,15 +4,18 @@ import { shallow } from 'enzyme'
 import CommentBox from 'Components/CommentBox'
 import CommentList from 'Components/CommentList'
 
+let component;
+
+beforeEach(() => {
+  component = shallow(<App />)
+
+})
 
 it('shows comment box', () => {
-  const component = shallow(<App />)
-
-  expect(component.find(CommentBox).length).toEqual(1)
+ expect(component.find(CommentBox).length).toEqual(1)
 })
 
 it('shows comment list', () => {
-  const componet = shallow(<App />)
 
-  expect(componet.find(CommentList).length).toEqual(1)
+  expect(component.find(CommentList).length).toEqual(1)
 })
