@@ -14,8 +14,8 @@ beforeEach(()=>{
  })
 
 it('has a  textarea and button', () => {
-  expect(component.find('textarea').length)
-  expect(component.find('button').length)
+  expect(component.find('textarea').length).toEqual(1)
+  expect(component.find('button').length).toEqual(1)
 })
 
 //forced to rerender component because setState is aysync. 
