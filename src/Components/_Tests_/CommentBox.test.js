@@ -38,6 +38,7 @@ it('text area is empty when new comment is entered', () => {
     }
   })
   component.update()
+  expect(component.find('textarea').prop('value')).toEqual('new comment')
   component.find('form').simulate('submit');
   component.update()
   expect(component.find('textarea').prop('value')).toEqual('')
