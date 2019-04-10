@@ -18,7 +18,8 @@ it('has a  textarea and button', () => {
   expect(component.find('button').length)
 })
 
-//forced to rerender component because setState is aysync
+//forced to rerender component because setState is aysync. 
+//Assertion textarea recives value prop
 it('has a text area', () => {
   component.find('textarea').simulate('change', {
     target: {
@@ -26,4 +27,6 @@ it('has a text area', () => {
     }
   })
   component.update()
+
+  expect(component.find('textarea').prop('value')).toEqual('new comment')
 })
