@@ -18,29 +18,28 @@ it('has a  textarea and button', () => {
   expect(component.find('button').length).toEqual(1)
 })
 
+
 //forced to rerender component because setState is aysync. 
 //Assertion textarea recives value prop
-it('has a text area', () => {
-  component.find('textarea').simulate('change', {
-    target: {
-      value: 'new comment'
-    }
+describe("the text area", () => {
+  beforeEach(()=> {
+    component.find('textarea').simulate('change', {
+      target: {
+        value: 'new comment'
+      }
+    })
+    component.update()
   })
-  component.update()
-
-  expect(component.find('textarea').prop('value')).toEqual('new comment')
-})
-
-it('text area is empty when new comment is entered', () => {
-  component.find('textarea').simulate('change', {
-    target: {
-      value: "new comment"
-    }
+  
+  it('has a text area', () => {
+    expect(component.find('textarea').prop('value')).toEqual('new comment')
   })
-  component.update()
-  expect(component.find('textarea').prop('value')).toEqual('new comment')
-  component.find('form').simulate('submit');
-  component.update()
-  expect(component.find('textarea').prop('value')).toEqual('')
-})
 
+  it('text area is empty when new comment is entered', () => {
+    expect(component.find('textarea').prop('value')).toEqual('new comment')
+    component.find('form').simulate('submit');
+    component.update()
+    expect(component.find('textarea').prop('value')).toEqual('')
+  })
+
+})
