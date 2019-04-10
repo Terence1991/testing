@@ -1,12 +1,18 @@
 import React from 'react'
 import CommentBox from 'Components/CommentBox'
 import { mount } from 'enzyme'
+import Root from 'root'
 
 let component
  
 
+
 beforeEach(()=>{
-    component = mount(<CommentBox/>)
+    component = mount(
+    <Root>
+      <CommentBox/>
+    </Root> 
+  )
  })
 
  afterEach(() => {
