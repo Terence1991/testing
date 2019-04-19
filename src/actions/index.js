@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { SAVE_COMMENT, FETCH_COMMENT} from 'actions/types'
+import { SAVE_COMMENT, FETCH_COMMENTS} from 'actions/types'
 
 
 export function saveComment(comment) {
@@ -10,11 +10,11 @@ export function saveComment(comment) {
 }
 
 
-export function fetchComment() {
-  const response = axios.get('http://jsonplaceholder.typicode.com/comments')
+export function fetchComments() {
+  const comments = axios.get('https://jsonplaceholder.typicode.com/comments')
 
   return {
-    type: FETCH_COMMENT,
-    payLoad: response
+    type: FETCH_COMMENTS,
+    payLoad: comments
   }
 }
