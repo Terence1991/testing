@@ -6,7 +6,6 @@ export default function(state = [], action) {
     case SAVE_COMMENT:
       return [...state, action.payLoad]
     case FETCH_COMMENTS:
-    console.log("This gets <Promise>", action.payLoad)
      const comments = action.payLoad.map((comment) => {
         return comment.name 
       })
