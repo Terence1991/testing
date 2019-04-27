@@ -20,7 +20,7 @@ afterEach(() => {
 
 
 
-it('should fetch a list of  comments', () => {
+it('should fetch a list of  comments', (done) => {
 
   const component = mount(
     <Root>
@@ -28,5 +28,12 @@ it('should fetch a list of  comments', () => {
     </Root>
   )
   component.find('.fetch-comments').simulate('click')
-  expect(component.find('li').length).toEqual(500)
+  component.update()
+
+  moxios.wait(() => {
+    expect(component.find('li').length).toEqual(2)
+    
+    done()
+    component.unmount()
+  }, 5000)
 })
