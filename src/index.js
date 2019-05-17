@@ -7,6 +7,8 @@ import App from 'Components/App'
 
 ReactDOM.render(
 <Root>
-  <App/>
-</Root>  
+  <BrowserRouter>
+    <Route path='/' component={App}/>
+  </BrowserRouter>
+</Root>
 ,document.querySelector('#root'))
