@@ -12,6 +12,7 @@ renderComments() {
    render() {
      return (
        <div>
+         <h4>Comment list</h4>
          <ul>
            {this.renderComments()}
          </ul>
@@ -26,3 +27,4 @@ renderComments() {
 
 
 export default connect(mapStateToProps)(CommentList)
+
