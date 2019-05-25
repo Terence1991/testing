@@ -2,25 +2,16 @@ import React, {Component} from 'react'
 import CommentBox from 'Components/CommentBox'
 import CommentList from 'Components/CommentList.js' 
 import { Route, Link } from 'react-router-dom'
-import connect from 'react-rotuer'
-import auth from '../reducers/auth';
+import { connect } from 'react-redux'
 
 
 class App extends Component {
 
   renderButton() {
     if(this.props.auth) {
-     return(
-     <button>
-        sign out 
-      </button>
-     )
+     return<button>sign out</button>
     }  else {
-      return (
-        <button>
-          sign in
-        </button>
-      )
+      return <button>sign in</button>
     }
   }
 
